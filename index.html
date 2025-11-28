@@ -7,16 +7,30 @@
     <title>Link Collector</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      // 테마 초기화: localStorage에서 테마를 확인하고 <html> 태그에 적용
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.classList.add(savedTheme);
+
       tailwind.config = {
+        darkMode: 'class', // 'dark:' 접두사를 사용하도록 설정
         theme: {
           extend: {
             colors: {
-              primary: '#3B82F6',
-              secondary: '#10B981',
-              background: '#111827',
-              surface: '#1F2937',
-              text: '#F9FAFB',
-              'text-secondary': '#9CA3AF',
+              // 라이트 모드 (기본)
+              'light-bg': '#f3f4f6', // 밝은 배경
+              'light-surface': '#ffffff', // 밝은 카드 배경
+              'light-text': '#1f2937', // 어두운 텍스트
+              'light-secondary-text': '#6b7280', // 보조 텍스트
+              
+              // 다크 모드
+              'dark-bg': '#171717', // 어두운 배경 (매우 어두움)
+              'dark-surface': '#262626', // 어두운 카드 배경
+              'dark-text': '#f3f4f6', // 밝은 텍스트
+              'dark-secondary-text': '#a3a3a3', // 보조 텍스트
+
+              // 강조 색상 (공통)
+              'primary': '#4f46e5', // 보라색 계열
+              'primary-light': '#818cf8',
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -25,21 +39,8 @@
         },
       }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="/index.css">
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/-Link-Collector/assets/index-CzsLSxk0.js"></script>
+  <script type="module" crossorigin src="/-Link-Collector/assets/index-BD_ZUt5j.js"></script>
 </head>
   <body class="bg-background text-text font-sans">
     <div id="root"></div>
